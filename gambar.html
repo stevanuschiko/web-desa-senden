@@ -58,6 +58,31 @@
             background: var(--primary-light);
             box-shadow: 0 6px 15px rgba(15, 118, 110, 0.25);
         }
+        
+        /* ─── STYLING TAMBAHAN UNTUK TEMPAT TWO-POSTER SEJAJAR ─── */
+        .poster-container-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Membagi menjadi 2 kolom sejajar di PC, otomatis bertumpuk di HP */
+            gap: 30px;
+            margin-bottom: 40px; /* Jarak pemisah dengan area galeri bawah */
+        }
+        .poster-section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            text-align: center;
+        }
+        .poster-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 450px; /* Membatasi tinggi poster agar seimbang */
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
     </style>
     <link rel="icon" type="image/png" href="gambar/logotanpateks.png">
 </head>
@@ -77,6 +102,29 @@
     </nav>
 
     <main class="container" style="margin-top: 60px;">
+        
+        <div class="poster-container-grid">
+            
+            <div class="poster-section">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Poster Utama Desa</h2>
+                <img src="gambar/poster kemerdeka.jpg" alt="Poster Utama Desa Senden" class="poster-img">
+                <br>
+                <a href="gambar/poster kemerdeka.jpg" download="Poster_Utama_Senden.png" class="btn-download" style="padding: 12px 30px; font-size: 0.95rem;">
+                    Download Poster 
+                </a>
+            </div>
+
+            <div class="poster-section">
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Poster Pengumuman Tambahan</h2>
+                <img src="gambar/Poster.jpg" alt="Poster Tambahan Desa Senden" class="poster-img">
+                <br>
+                <a href="gambar/Poster.jpg" download="Poster_Tambahan_Senden.png" class="btn-download" style="padding: 12px 30px; font-size: 0.95rem;">
+                    Download Poster 
+                </a>
+            </div>
+            
+        </div>
+        
         <h2 class="main-title">Kegiatan & Galeri Dokumentasi Desa Senden</h2>
         
         <div class="gallery-grid">
