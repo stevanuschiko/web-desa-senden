@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto - Desa Senden</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Memecah foto otomatis menjadi 3 kolom di PC */
+            gap: 25px; /* Jarak antar kotak foto */
+            margin-top: 20px;
+        }
+        .gallery-item {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden; /* Memastikan sudut konten tetap melengkung rapi */
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover; /* Memotong gambar secara proporsional agar tinggi semua foto seragam */
+            display: block;
+        }
+        .gallery-content {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .gallery-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        /* Desain Tombol Download Oval Menyesuaikan Tema Hijau Web */
+        .btn-download {
+            display: inline-block;
+            background: var(--primary);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 50px; /* Membuat tombol berbentuk oval pro */
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(6, 78, 59, 0.15);
+            border: 1px solid transparent;
+        }
+        .btn-download:hover {
+            background: var(--primary-light);
+            box-shadow: 0 6px 15px rgba(15, 118, 110, 0.25);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">
+            <img src="gambar/logotanpateks.png" alt="Logo Desa Senden" class="logo-desa">
+            <div class="brand-text">Desa <span>Senden</span></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="profil.html">Profil</a>
+            <a href="gambar.html" class="active">Kegiatan & Galeri</a>
+            <a href="map.html">Map Desa</a>
+        </div>
+    </nav>
+
+    <main class="container" style="margin-top: 60px;">
+        <h2 class="main-title">Kegiatan & Galeri Dokumentasi Desa Senden</h2>
+        
+        <div class="gallery-grid">
+            
+            <div class="gallery-item">
+                <img src="gambar/senden.jpg" alt="Dokumentasi Desa 1">
+                <div class="gallery-content">
+                    <div class="gallery-desc">Kantor Balai Desa & Pusat Pelayanan Terpadu Senden</div>
+                    <a href="gambar/senden.jpg" download="balai-desa-senden.jpg" class="btn-download">Downloas Gambar</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="gambar/foto1.jpg" alt="Dokumentasi Desa 2">
+                <div class="gallery-content">
+                    <div class="gallery-desc">Kegiatan Gotong Royong Infrastruktur Desa</div>
+                    <a href="gambar/foto1.jpg" download="balai-desa-senden.jpg" class="btn-download">Downloas Gambar</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="gambar/20250814084026.jpg" alt="Dokumentasi Desa 3">
+                <div class="gallery-content">
+                    <div class="gallery-desc">Musyawarah Perencanaan Pembangunan </div>
+                    <a href="gambar/20250814084026.jpg" download="balai-desa-senden.jpg" class="btn-download">Downloas Gambar</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="gambar/IMG-20260402-WA0005.jpg" alt="Dokumentasi Desa 4">
+                <div class="gallery-content">
+                    <div class="gallery-desc">Pelaksanaan Layanan Kesehatan Balita & Lansia</div>
+                    <a href="gambar/IMG-20260402-WA0005.jpg" download="balai-desa-senden.jpg" class="btn-download">Downloas Gambar</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="gambar/Screenshot 2026-05-22 090327.jpg" alt="Dokumentasi Desa 5">
+                <div class="gallery-content">
+                    <div class="gallery-desc">Sentra Industri Kreatif Ekonomi Mandiri Warga</div>
+                    <a href="gambar/Screenshot 2026-05-22 090327.jpg" download="balai-desa-senden.jpg" class="btn-download">Downloas Gambar</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="gambar/Screenshot 2026-05-22 084117.jpg" alt="Dokumentasi Desa 6">
+                <div class="gallery-content">
+                    <div class="gallery-desc">Fasilitas Olahraga Lapangan Serbaguna Desa Senden</div>
+                    <a href="gambar/Screenshot 2026-05-22 084117.jpg" download="balai-desa-senden.jpg" class="btn-download">Downloas Gambar</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>

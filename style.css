@@ -1,0 +1,350 @@
+/* =========================================
+  TEMA WARNA & VARIABEL UTAMA WEB DESA
+  =========================================
+  Bagian ini menentukan warna dasar agar seragam di semua halaman.
+*/
+:root {
+  --primary: #064e3b;       /* Hijau Emerald Gelap (Mewah & Profesional) */
+  --primary-light: #0f766e; /* Teal Tua */
+  --accent: #14b8a6;        /* Teal Cerah */
+  --bg-light: #f8fafc;      /* Background halaman yang bersih */
+  --text-dark: #0f172a;     /* Warna teks utama */
+  --text-muted: #475569;    /* Warna teks sekunder */
+  --card-bg: #ffffff;       /* Putih bersih untuk latar belakang kotak konten */
+}
+
+/* =========================================
+  PENGATURAN DASAR (RESET STYLES)
+  =========================================
+*/
+* {
+  box-sizing: border-box; /* Memastikan ukuran padding tidak merusak tata letak */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-light);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Font modern standar web pro */
+  color: var(--text-dark);
+  line-height: 1.6; /* Jarak antar baris teks agar nyaman dibaca */
+}
+
+/* =========================================
+  NAVIGASI ATAS (FLOATING GLASSMORPHISM)
+  =========================================
+*/
+nav {
+  background: rgba(6, 78, 59, 0.95); /* Hijau transparan tebal */
+  backdrop-filter: blur(10px);       /* Efek blur kaca di belakang menu saat di-scroll */
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;    /* Memisahkan logo di kiri dan menu di kanan */
+  align-items: center;
+  position: sticky;                  /* Membuat menu tetap menempel di atas saat layar digeser ke bawah */
+  top: 0;
+  z-index: 1000;                     /* Memastikan menu tidak tertutup oleh konten lain */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Jarak antara gambar logo dengan teks "Desa Senden" */
+}
+
+/* Pengaturan Khusus Gambar Logo Desa di Navigasi */
+nav .brand .logo-desa {
+  width: 60px;          /* Mengatur lebar logo */
+  height: 60px;         /* Mengatur tinggi logo agar seimbang */
+  object-fit: contain;  /* Memastikan gambar logo tidak gepeng/terdistorsi */
+  border-radius: 4px;   /* Membuat sudut logo sedikit melengkung rapi */
+}
+
+nav .brand-text {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+nav .brand-text span {
+  color: #a7f3d0; /* Memberi warna hijau muda khusus pada kata "Senden" */
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 15px; /* Jarak antar tombol menu */
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none; /* Menghilangkan garis bawah pada link */
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+/* Hover Instan Tanpa Efek Animasi Lambat */
+nav a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1); /* Efek highlight putih tipis saat disentuh mouse */
+}
+
+/* Penanda halaman yang sedang dibuka aktif */
+nav a.active {
+  color: #ffffff;
+  background: var(--primary-light);
+  box-shadow: 0 4px 12px rgba(15, 118, 110, 0.3);
+}
+
+/* =========================================
+  HERO BANNER (FOTO UTAMA DI ATAS)
+  =========================================
+*/
+.hero {
+  position: relative;
+  height: 80vh;          /* Tinggi banner mengambil 80% tinggi layar monitor */
+  min-height: 500px;
+  /* Lapisan hitam transparan (linear-gradient) digabungkan dengan foto desa asli */
+  background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(6, 78, 59, 0.45)),
+  url('https://api-desa-web-diskominfox10-v3.klaten.go.id/media/saddesa/20230220034825.webp') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Bayangan teks agar kontras dengan foto belakang */
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 35px;
+  color: #f1f5f9;
+  font-weight: 400;
+}
+
+/* Tombol Oval Pro Instan */
+.btn-hero {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--primary);
+  padding: 14px 40px;
+  border-radius: 50px; /* Membuat bentuk tombol menjadi oval sempurna */
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid transparent;
+}
+
+.btn-hero:hover {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(6, 78, 59, 0.3);
+}
+
+/* =========================================
+  TATA LETAK KONTEN UTAMA & GRID SYSTEM
+  =========================================
+*/
+.container {
+  max-width: 1140px;
+  margin: -60px auto 60px auto; /* Reconstruction tata letak menumpuk modern */
+  padding: 0 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  position: relative;
+  padding-bottom: 15px;
+}
+
+/* Garis dekorasi kecil di bawah judul */
+.main-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Grid Pembagi Kolom Otomatis Responsif */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Pecah 2 kolom di PC, otomatis 1 kolom di HP */
+  gap: 30px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Pecah 3 kolom untuk daftar kegiatan */
+  gap: 30px;
+}
+
+/* Komponen Kartu Putih Minimalis */
+.card {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 10px 15px -3px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  border-color: rgba(20, 184, 166, 0.3); /* Batas kartu berubah warna tipis saat disorot */
+}
+
+.card h2, .card h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+/* =========================================
+  STRUKTUR VISI & MISI DUA SISI
+  =========================================
+*/
+.visi-misi-container {
+  background: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  overflow: hidden; /* Memastikan sudut background gradasi melengkung rapi */
+}
+
+.visi-misi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Kolom Misi dibuat sedikit lebih lebar daripada kolom Visi */
+}
+
+.visi-box {
+  background: linear-gradient(135deg, #064e3b, #022c22); /* Gradasi hijau gelap premium */
+  color: #ffffff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.visi-box h3 {
+  color: #a7f3d0;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.visi-box p {
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.misi-box {
+  padding: 50px;
+  background: #ffffff;
+}
+
+.misi-box h3 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.misi-box ol {
+  padding-left: 20px;
+}
+
+.misi-box li {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* =========================================
+  TABEL PROFIL & WIDGET PETA
+  =========================================
+*/
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 1.05rem;
+}
+
+.profile-table tr:last-child td {
+  border: none;
+}
+
+.profile-table td:first-child {
+  font-weight: 600;
+  color: var(--primary-light);
+  width: 35%; /* Kolom judul data berukuran 35% lebar tabel */
+}
+
+.map-container {
+  position: relative;
+  padding-bottom: 55%; /* Membantu menjaga rasio layar peta tetap proporsional */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================
+  RESPONSIVE BREAKPOINTS (TAMPILAN HP)
+  =========================================
+*/
+@media (max-width: 992px) {
+  .visi-misi-grid { grid-template-columns: 1fr; } /* Visi Misi ditumpuk vertikal jika layar tablet/HP */
+  .visi-box, .misi-box { padding: 40px; }
+}
+
+@media (max-width: 768px) {
+  nav { flex-direction: column; gap: 15px; padding: 15px 20px; } /* Menu navigasi menjadi vertikal di HP */
+  .hero-content h1 { font-size: 2.3rem; }
+  .hero-content p { font-size: 1.1rem; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .container { margin-top: -30px; }
+}
