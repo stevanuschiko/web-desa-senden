@@ -1,4 +1,8 @@
-alert("Selamat datang di website Desa Senden");
+// Mengecek apakah halaman saat ini adalah beranda (index.html atau halaman utama)
+const currentPath = window.location.pathname;
+if (currentPath.endsWith("index.html") || currentPath.endsWith("/")) {
+    alert("Selamat datang di website Desa Senden");
+}
 
 // Logika untuk menampilkan dan menyembunyikan Menu Dropdown di HP
 const mobileMenu = document.getElementById('mobile-menu');
