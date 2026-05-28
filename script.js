@@ -1,6 +1,9 @@
-// Mengecek apakah halaman saat ini adalah beranda (index.html atau halaman utama)
-const currentPath = window.location.pathname;
-if (currentPath.endsWith("index.html") || currentPath.endsWith("/")) {
+// Mengambil alamat link yang sedang dibuka saat ini
+const path = window.location.pathname.toLowerCase();
+
+// Jika di dalam link TIDAK ADA kata "profil", "gambar", dan "map", maka tampilkan alert.
+// Ini memastikan alert hanya muncul di beranda (index.html)
+if (!path.includes("profil") && !path.includes("gambar") && !path.includes("map")) {
     alert("Selamat datang di website Desa Senden");
 }
 
