@@ -409,3 +409,69 @@ footer {
   margin-top: 60px;
   font-size: 0.95rem;
 }
+
+/* =========================================
+  TAMBAHAN KELAS UNTUK HALAMAN PROFIL
+  =========================================
+*/
+.hero-profil {
+  height: 35vh;
+  min-height: 250px;
+}
+
+.section-gap {
+  margin-top: 60px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  margin-top: -20px;
+}
+
+/* Teks dalam Card Umum */
+.card-desc {
+  margin-top: 10px;
+  color: var(--text-muted);
+}
+.card-list {
+  margin: 15px 0 0 20px;
+  color: var(--text-muted);
+}
+
+/* Desain Potensi Desa */
+.potensi-title {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+.potensi-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+/* Desain Demografi (Statistik) */
+.text-center {
+  text-align: center;
+}
+.card-demo {
+  padding: 30px 20px;
+}
+.icon-demo {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+.icon-primary { color: var(--primary); }
+.icon-blue { color: #2563eb; }
+.icon-orange { color: #f59e0b; }
+.demo-number {
+  font-size: 2.2rem;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+.demo-label {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
