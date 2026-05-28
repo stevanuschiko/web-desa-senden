@@ -366,15 +366,15 @@ nav a.active {
   /* Menampilkan Hamburger Menu */
   .menu-toggle { display: flex; }
   
-  /* Konfigurasi Dropdown Menu Minimalis di HP */
-  .nav-links {
-    display: none; /* Sembunyikan menu bawaan */
+  /* PERBAIKAN: Menambahkan 'nav' di depan agar spesifisitas CSS menang! */
+  nav .nav-links {
+    display: none; /* Sekarang ini dijamin bekerja untuk menyembunyikan menu bawaan */
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(6, 78, 59, 0.98); /* Background solid dengan sedikit transparansi */
+    background: rgba(6, 78, 59, 0.98); 
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     text-align: center;
@@ -382,7 +382,7 @@ nav a.active {
   }
   
   /* Class yang ditambahkan oleh JavaScript saat menu ditekan */
-  .nav-links.active {
+  nav .nav-links.active {
     display: flex;
   }
   
