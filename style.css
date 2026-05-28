@@ -464,7 +464,7 @@ footer {
 }
 .icon-primary { color: var(--primary); }
 .icon-blue { color: #2563eb; }
-.icon-orange { color: #f59e0b; }
+.icon-pink { color: #ec4899; } /* PERUBAHAN: Kelas warna pink untuk ikon wanita */
 .demo-number {
   font-size: 2.2rem;
   color: var(--text-dark);
@@ -475,6 +475,7 @@ footer {
   font-weight: 600;
   font-size: 1.1rem;
 }
+
 /* =========================================
   TAMBAHAN KELAS UNTUK HALAMAN GALERI / GAMBAR
   =========================================
