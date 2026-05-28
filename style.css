@@ -101,6 +101,25 @@ nav a.active {
 }
 
 /* =========================================
+  TOMBOL MENU HAMBURGER (TAMPIL DI HP)
+  =========================================
+*/
+.menu-toggle {
+  display: none; /* Disembunyikan di PC */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* =========================================
   HERO BANNER (FOTO UTAMA DI ATAS)
   =========================================
 */
@@ -342,9 +361,51 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
-  nav { flex-direction: column; gap: 15px; padding: 15px 20px; } /* Menu navigasi menjadi vertikal di HP */
+  nav { padding: 15px 20px; } 
+  
+  /* Menampilkan Hamburger Menu */
+  .menu-toggle { display: flex; }
+  
+  /* Konfigurasi Dropdown Menu Minimalis di HP */
+  .nav-links {
+    display: none; /* Sembunyikan menu bawaan */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 78, 59, 0.98); /* Background solid dengan sedikit transparansi */
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    gap: 10px;
+  }
+  
+  /* Class yang ditambahkan oleh JavaScript saat menu ditekan */
+  .nav-links.active {
+    display: flex;
+  }
+  
+  /* Animasi Hamburger berubah menjadi "X" saat aktif */
+  .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+  .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
   .hero-content h1 { font-size: 2.3rem; }
   .hero-content p { font-size: 1.1rem; }
   .grid-2 { grid-template-columns: 1fr; }
   .container { margin-top: -30px; }
+}
+
+/* =========================================
+  FOOTER (SIMPLE)
+  =========================================
+*/
+footer {
+  background: var(--primary);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.95rem;
 }
